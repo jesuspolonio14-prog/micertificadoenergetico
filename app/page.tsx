@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import FormSolicitud from './FormSolicitud'
 
 export const metadata: Metadata = {
@@ -81,8 +82,14 @@ export default function Home() {
 
       {/* NAV */}
       <nav className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
-        <a href="/" className="text-xl font-bold tracking-tight">
-          mi<span className="text-[#C4531A]">certificado</span>energetico
+        <a href="/">
+          <Image
+            src="/logo-mce.png"
+            alt="Mi Certificado Energético"
+            width={72}
+            height={72}
+            priority
+          />
         </a>
         <a
           href="#solicitar"
@@ -343,9 +350,14 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-[#E8DFD8] py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="text-xl font-bold">
-            mi<span className="text-[#C4531A]">certificado</span>energetico
-          </span>
+          <a href="/">
+            <Image
+              src="/logo-mce.png"
+              alt="Mi Certificado Energético"
+              width={52}
+              height={52}
+            />
+          </a>
           <p className="text-sm text-[#6B5B4E]">© 2026 · Jesús Polonio · Segovia</p>
           <div className="flex gap-6 text-sm text-[#6B5B4E]">
             <a href="#" className="hover:text-[#1C1208] transition-colors">Privacidad</a>
