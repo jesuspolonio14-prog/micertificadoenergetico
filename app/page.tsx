@@ -385,7 +385,15 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="border-t border-[#E8DFD8] py-10 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-6xl mx-auto space-y-5">
+          <div className="flex flex-wrap gap-3 text-sm">
+            <a href="/certificado-energetico-madrid" className="text-[#6B5B4E] hover:text-[#C4531A] transition-colors">Certificado energético Madrid</a>
+            <span className="text-[#E8DFD8]">·</span>
+            <a href="/certificado-energetico-segovia" className="text-[#6B5B4E] hover:text-[#C4531A] transition-colors">Certificado energético Segovia</a>
+            <span className="text-[#E8DFD8]">·</span>
+            <a href="/precio-certificado-energetico" className="text-[#6B5B4E] hover:text-[#C4531A] transition-colors">¿Cuánto cuesta un certificado energético?</a>
+          </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <a href="/">
             <Image
               src="/logo-mce.png"
@@ -399,6 +407,7 @@ export default function Home() {
             <a href="#" className="hover:text-[#1C1208] transition-colors">Privacidad</a>
             <a href="#" className="hover:text-[#1C1208] transition-colors">Términos</a>
             <a href="mailto:hola@micertificadoenergetico.com" className="hover:text-[#1C1208] transition-colors">Contacto</a>
+          </div>
           </div>
         </div>
       </footer>
