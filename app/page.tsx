@@ -76,9 +76,45 @@ const faqs = [
   },
 ]
 
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      name: 'Mi Certificado Energético',
+      description: 'Técnico habilitado para la elaboración de certificados energéticos con CE3x en Madrid y Segovia.',
+      url: 'https://micertificadoenergetico.com',
+      telephone: '+34685752625',
+      address: { '@type': 'PostalAddress', addressLocality: 'Segovia', addressRegion: 'Segovia', addressCountry: 'ES' },
+      areaServed: ['Madrid', 'Segovia', 'España'],
+      priceRange: '€',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Certificados energéticos',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Certificado energético para piso hasta 80m²' }, price: '89', priceCurrency: 'EUR' },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Certificado energético para casa unifamiliar' }, price: '149', priceCurrency: 'EUR' },
+        ],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F7F3EE] text-[#1C1208]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+      />
 
       {/* NAV */}
       <nav className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
