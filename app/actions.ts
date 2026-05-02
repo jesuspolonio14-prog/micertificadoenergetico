@@ -28,7 +28,7 @@ export async function enviarSolicitud(
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'reformarealsoporte@gmail.com',
+      to: 'micertificadoenergeticosoporte@gmail.com',
       subject: `Nueva solicitud de certificado energético — ${nombre}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
